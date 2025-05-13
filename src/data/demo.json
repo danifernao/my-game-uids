@@ -1,0 +1,101 @@
+{
+  "abc-game": {
+    "theme": "dark",
+    "title": "Juego ABC",
+    "background": "demo/game1-background.jpg",
+    "cover": {
+      "avatar": "demo/game1-avatar.jpg",
+      "background": "demo/game1-cover.jpg"
+    },
+    "player": {
+      "username": "Jugador XYZ",
+      "legend": "Lorem ipsum dolor sit amet",
+      "contact": [
+        {
+          "type": "link",
+          "title": "Descarga:",
+          "description": {
+            "url": "https://www.google.com/",
+            "text": "Juego ABC"
+          }
+        },
+        {
+          "type": "text",
+          "title": "Servidor:",
+          "description": "América"
+        },
+        {
+          "type": "field",
+          "title": "ID:",
+          "description": "1234567890"
+        }
+      ]
+    }
+  },
+  "def-game": {
+    "theme": "dark",
+    "title": "Juego DEF",
+    "background": "demo/game2-background.jpg",
+    "cover": {
+      "avatar": "demo/game2-avatar.jpg",
+      "background": "demo/game2-cover.jpg"
+    },
+    "player": {
+      "username": "Jugador UVW",
+      "legend": "Proin non lorem ut sem pellentesque",
+      "contact": [
+        {
+          "type": "link",
+          "title": "Descarga:",
+          "description": {
+            "url": "https://www.google.com/",
+            "text": "Juego DEF"
+          }
+        },
+        {
+          "type": "text",
+          "title": "Servidor:",
+          "description": "Asia"
+        },
+        {
+          "type": "field",
+          "title": "ID:",
+          "description": "9876543210"
+        }
+      ]
+    }
+  },
+  "ghi-game": {
+    "theme": "light",
+    "title": "Juego GHI",
+    "background": "demo/game3-background.jpg",
+    "cover": {
+      "avatar": "demo/game3-avatar.jpg",
+      "background": "demo/game3-cover.jpg"
+    },
+    "player": {
+      "username": "Jugador RST",
+      "legend": "Donec tincidunt leo quis nunc rutrum",
+      "contact": [
+        {
+          "type": "link",
+          "title": "Descarga:",
+          "description": {
+            "url": "https://www.google.com/",
+            "text": "Juego GHI"
+          }
+        },
+        {
+          "type": "text",
+          "title": "Servidor:",
+          "description": "América"
+        },
+        {
+          "type": "field",
+          "title": "ID:",
+          "description": "1290347856"
+        }
+      ]
+    }
+  }
+}

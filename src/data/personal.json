@@ -1,0 +1,56 @@
+{
+  "reverse-1999": {
+    "theme": "dark",
+    "title": "Reverse 1999",
+    "background": "reverse-1999-background.jpg",
+    "player": {
+      "contact": [
+        {
+          "type": "link",
+          "title": "Videojuego:",
+          "description": {
+            "url": "https://re1999.bluepoch.com",
+            "text": "Reverse 1999"
+          }
+        },
+        {
+          "type": "text",
+          "title": "Servidor:",
+          "description": "Global"
+        },
+        {
+          "type": "field",
+          "title": "ID de usuario:",
+          "description": "411308228"
+        }
+      ]
+    }
+  },
+  "wuthering-waves": {
+    "theme": "dark",
+    "title": "Wuthering Waves",
+    "background": "wuthering-waves-background.jpg",
+    "player": {
+      "contact": [
+        {
+          "type": "link",
+          "title": "Videojuego:",
+          "description": {
+            "url": "https://wutheringwaves.kurogames.com",
+            "text": "Wuthering Waves"
+          }
+        },
+        {
+          "type": "text",
+          "title": "Servidor:",
+          "description": "América"
+        },
+        {
+          "type": "field",
+          "title": "ID de usuario:",
+          "description": "501909923"
+        }
+      ]
+    }
+  }
+}

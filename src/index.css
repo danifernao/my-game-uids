@@ -1,0 +1,341 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: var(--color-bg-3);
+}
+
+body, #root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.1rem;
+}
+
+body.light {
+  --color-bg: #FFFFFF;
+  --color-bg-2: #DDDDDD;
+  --color-bg-3: #BBBBBB;
+  --color-fg: #111111;
+  --color-link: #004268;
+}
+
+body:not(.light) {
+  --color-bg: #000000;
+  --color-bg-2: #111111;
+  --color-bg-3: #444444;
+  --color-fg: #ffffff;
+  --color-link: #96d9ff;
+}
+
+#root {
+  flex: 1;
+}
+
+a {
+  color: var(--color-link);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 30rem;
+  color: var(--color-fg);
+  z-index: 20;
+}
+
+.card .cover {
+  position: relative;
+  width: 100%;
+  background-color: rgb(from var(--color-bg-2) r g b / 0.8);
+  background-size: cover;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+body.has-cover-background .card .cover {
+  height: 10rem;
+}
+
+body.has-avatar:not(.has-cover-background) .card .cover {
+  height: 5rem;
+}
+
+.card .avatar {
+  position: absolute;
+  left: 50%;
+  width: 10rem;
+  height: 10rem;
+  background-color: rgb(from var(--color-bg-2) r g b / 0.8);
+  border: 0.2rem solid rgb(from var(--color-bg-2) r g b / 0.8);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  z-index: 30;
+}
+
+body.has-cover-background .card .avatar {
+  bottom: -5rem;
+}
+
+body:not(.has-cover-background) .card .avatar {
+  bottom: 0rem;
+}
+
+.card .player-info {
+  padding: 2rem 1rem;
+  background-color: rgb(from var(--color-bg-2) r g b / 0.8);
+  backdrop-filter: blur(0.2rem);
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+body.has-avatar:not(.has-cover-background) .card .player-info {
+  padding-top: 0.5rem;
+}
+
+body.has-avatar.has-cover-background .card .player-info {
+  padding-top: 5.5rem;
+}
+
+body:not(.has-avatar):not(.has-cover-background) .card .player-info {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.card .player-info h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.card .player-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.card .player-info a {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card .player-info dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  margin: 0.5rem 0 0 0;
+}
+
+.card .player-info dl > * {
+  margin: 0;
+}
+
+.card .player-info dt {
+  padding: 0.5rem;
+  border-right: 0.2rem solid rgb(from var(--color-bg) r g b / 0.5);
+  font-weight: bold;
+  text-align: right;
+}
+
+.card .player-info dd {
+  padding: 0 0.5rem;
+}
+
+.card .player-info input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  background-color: rgb(from var(--color-bg-2) r g b / 0.9);
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  color: var(--color-fg);
+  caret-color: transparent;
+}
+
+.card .player-info input:focus {
+  background-color: rgb(from var(--color-bg) r g b / 0.8);
+  outline: none;
+}
+
+.card .tooltip {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  padding: 0.3rem 1rem;
+  background-color: rgb(from var(--color-bg) r g b / 0.9);
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  color: var(--color-fg);
+  visibility: hidden;
+  z-index: -40;
+}
+
+.card .tooltip.visible {
+  visibility: visible;
+  z-index: 40;
+}
+
+.card .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-top: 0.5rem solid rgb(from var(--color-bg) r g b / 0.9);
+  border-right: 0.5rem solid transparent;
+  border-left: 0.5rem solid transparent;
+  transform: translateX(-50%);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: rgb(from var(--color-bg-2) r g b / 0.9);
+  backdrop-filter: blur(0.7rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  z-index: 60;
+  transition: width ease 300ms;
+}
+
+body.sidebar-visible .sidebar {
+  width: 30rem;
+}
+
+.sidebar-content {
+  position: relative;
+  padding: 1rem;
+  white-space: nowrap;
+}
+
+.sidebar h3 {
+  margin: 1rem 0;
+  font-size: 2.2rem;
+  color: var(--color-fg);
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.sidebar li:not(:last-of-type) {
+  border-bottom: 0.03rem solid rgb(from var(--color-fg) r g b / 0.3);;
+}
+
+.sidebar a {
+  display: block;
+  padding: 1rem 0;
+  text-decoration: none;
+  color: var(--color-fg);
+}
+
+.sidebar a.active {
+  font-weight: 700;
+}
+
+.sidebar .close-sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: transparent;
+  border: none;
+  font-family: "Poppins", serif;
+  font-size: 2rem;
+  color: var(--color-fg);
+}
+
+body:not(.sidebar-visible) .close-sidebar {
+  visibility: hidden;
+}
+
+.sidebar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(from var(--color-bg-2) r g b / 0.8);
+  backdrop-filter: blur(0.1rem);
+  border: 0;
+  border-radius: 0.5rem;
+  color: var(--color-fg);
+  font-family: "Poppins", serif;
+  font-size: 1.1rem;
+  z-index: 50;
+}
+
+.sidebar-toggle:hover {
+  color: var(--color-link);
+}
+
+.sidebar-toggle svg {
+  font-size: 1.5rem;
+  animation: shake 5s; 
+  animation-iteration-count: infinite; 
+}
+
+@keyframes shake {
+  0% { transform:translate(0,0) }
+  1% { transform:translate(0.3rem,0) }
+  3% { transform:translate(0,0) }
+  5% { transform:translate(0.3rem,0) }
+  7% { transform:translate(0,0) }
+  8% { transform:translate(0.3rem,0) }
+  10% { transform:translate(0,0) }
+  100% { transform:translate(0,0) }
+}
+
+@media only screen and (max-width: 600px) {
+  .card .player-info dl {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .card .player-info dl > * {
+    padding: 0;
+  }
+
+  .card .player-info dt {
+    border: 0;
+    text-align: left;
+  }
+
+  .card .player-info dt:not(:first-of-type) {
+    margin: 1.3rem 0 0.3rem;
+  }
+
+  body.sidebar-visible .sidebar {
+    width: 100%;
+  }
+}
