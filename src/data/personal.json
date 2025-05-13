@@ -2,7 +2,7 @@
   "reverse-1999": {
     "theme": "dark",
     "title": "Reverse 1999",
-    "background": "reverse-1999-background.jpg",
+    "background": "personal/reverse-1999-background.jpg",
     "player": {
       "contact": [
         {
@@ -29,7 +29,7 @@
   "wuthering-waves": {
     "theme": "dark",
     "title": "Wuthering Waves",
-    "background": "wuthering-waves-background.jpg",
+    "background": "personal/wuthering-waves-background.jpg",
     "player": {
       "contact": [
         {
