@@ -4,7 +4,7 @@ Página web elaborada con React para compartir en un solo lugar mis UID de los v
 
 ![Captura de pantalla del proyecto](/screenshot.png)
 
-### Instalación
+## Instalación
 
 1. Asegúrate de tener instalado Node.js y NPM.
 2. Descarga o clona este repositorio e ingresa a él.
@@ -14,7 +14,7 @@ Página web elaborada con React para compartir en un solo lugar mis UID de los v
 npm install
 ```
 
-### Visualización
+## Visualización
 
 Ubícate en la raíz del proyecto, abre el terminal en dicha ubicación y ejecuta lo siguiente para iniciar el entorno de desarrollo y visualizarlo en el explorador web:
 
@@ -22,13 +22,13 @@ Ubícate en la raíz del proyecto, abre el terminal en dicha ubicación y ejecut
 npm run dev
 ```
 
-### Edición
+## Edición
 
 - El contenido se edita en el archivo `src/data/demo.json`.
 - Los nombres de las imágenes, junto con sus extensiones, hacen referencia a los archivos agregados en `public/images/`.
 - Disponibles en dos temas: `light` y `dark` (por defecto).
 
-### Producción
+## Producción
 
 Ubícate en la raíz del proyecto, abre el terminal en dicha ubicación y ejecuta lo siguiente para generar los archivos destinados a un entorno de producción:
 
